@@ -34,8 +34,8 @@ public class CanalKafkaApplication implements CommandLineRunner {
         CanalConnector connector = CanalConnectors.newClusterConnector(zkServers, destinations, "", "");
 
         final CanalClient canalClient = new CanalClient(connector, destinations, applicationConfig);
-        canalClient.registerRowDataHandler(new KafkaHandlerListener(applicationConfig));
-        canalClient.start();
-        log.info("binlog server start success......");
+        canalClient.registerRowDataHandler(new KafkaHandlerListener(applicationConfig)); //注册数据处理器
+        canalClient.start(); //启动canal
+        log.info("server start success......");
     }
 }
