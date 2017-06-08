@@ -1,0 +1,12 @@
+app:
+  canal:
+    zkServers: 10.10.10.43:2181
+    destinations: hsmjia
+
+  kafka:
+    bootstrapServers: 10.10.10.43:9092
+    keySerializer: org.apache.kafka.common.serialization.StringSerializer
+    valueSerializer: org.apache.kafka.common.serialization.StringSerializer
+    acks: 1
+
+  subscribeTables: hsmjia.user
